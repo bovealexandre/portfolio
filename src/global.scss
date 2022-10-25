@@ -1,0 +1,113 @@
+@use './assets/scss/fontawesome.scss';
+@use './assets/scss/regular.scss';
+@use './assets/scss/brands.scss';
+@use './assets/scss/solid.scss';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// @layer base {
+//   html {
+//     @apply font-light;
+//     font-family: 'Montserrat';
+//   }
+// }
+
+.me {
+  @apply h-1/2 w-screen absolute bottom-0 right-1/2 translate-x-1/2 -z-50;
+
+  &-img {
+    @apply bg-contain h-full bg-no-repeat transition-all duration-1000;
+    background-position-x: center;
+    // calc(0% - 18vh)
+    // calc(100% + 18vh)
+    background-image: url('me.webp');
+    &-exp {
+      @apply sm:opacity-0;
+      background-position: calc(100% + 18vh);
+    }
+    &-skills {
+      @apply sm:opacity-0;
+      background-position: -18vh;
+    }
+  }
+}
+
+.navbar {
+  @apply fixed top-0 w-screen h-screen flex justify-between transition-all duration-500;
+  pointer-events: none;
+
+  &-items {
+    @apply h-full text-center uppercase transition-all duration-500 cursor-pointer bg-size-200 bg-pos-100/0 hover:bg-size-100 from-[#4EA1D370] via-transparent to-transparent bg-gradient-to-tr font-medium;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    line-height: 25vw;
+    pointer-events: all;
+    &:last-of-type {
+      @apply bg-pos-0 bg-gradient-to-tl;
+    }
+  }
+  &-exp {
+    @apply w-[150vw];
+  }
+  &-skills {
+    @apply w-[150vw] -ml-[50vw];
+  }
+}
+
+.appearing {
+  @apply animate-shadowAppear;
+  & > * {
+    @apply animate-appear opacity-0;
+  }
+}
+
+.bg {
+  @apply w-screen h-screen fixed top-0 -z-20;
+}
+
+body {
+  @apply bg-[#0E0E11] w-screen h-screen text-[#D8E9EF] overflow-hidden;
+}
+
+.mobile-btn {
+  @apply hidden fixed right-4 top-2 sm:flex items-center justify-center w-9 h-12 cursor-pointer transition-all duration-500 z-10;
+  &-burger {
+    @apply w-full h-1 bg-[#D8E9EF] rounded-full transition-all duration-500;
+    &::before,
+    &::after {
+      @apply absolute w-full h-1 bg-[#D8E9EF] rounded-full transition-all duration-500;
+      content: '';
+    }
+    &::before {
+      @apply -translate-y-3;
+    }
+    &::after {
+      @apply translate-y-3;
+    }
+  }
+  .mobile-menu {
+    @apply fixed flex flex-col items-center justify-center text-center text-2xl font-bold uppercase w-screen h-0 bg-transparent top-0 left-0 -z-40 transition-all duration-500;
+    * {
+      @apply py-4 hidden;
+    }
+  }
+}
+.open {
+  & .mobile-btn-burger {
+    @apply -translate-x-1/2 bg-transparent;
+    &::before {
+      @apply rotate-45 translate-x-1/2 translate-y-1/4;
+    }
+    &::after {
+      @apply -rotate-45 translate-x-1/2 -translate-y-1/4;
+    }
+  }
+  & .mobile-menu {
+    @apply bg-[#4EA1D3] h-screen;
+    * {
+      @apply block;
+    }
+  }
+}
