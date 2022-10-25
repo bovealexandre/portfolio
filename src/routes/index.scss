@@ -9,7 +9,7 @@
     @apply font-extralight text-2xl;
   }
   &-location {
-    @apply text-center w-[15%] font-normal text-base border-b-[0.1rem] border-b-[#D8E9EF80] pb-2 mb-1;
+    @apply text-center w-[15%] sm:w-4/5 font-normal text-base border-b-[0.1rem] border-b-[#D8E9EF80] pb-2 mb-1;
   }
 
   &-logo {
