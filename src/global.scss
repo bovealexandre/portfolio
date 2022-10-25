@@ -73,6 +73,9 @@ body {
 
 .mobile-btn {
   @apply hidden fixed right-4 top-2 sm:flex items-center justify-center w-9 h-12 cursor-pointer transition-all duration-500 z-10;
+  &-click {
+    @apply flex items-center justify-center w-full h-full;
+  }
   &-burger {
     @apply w-full h-1 bg-[#D8E9EF] rounded-full transition-all duration-500;
     &::before,

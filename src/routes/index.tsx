@@ -273,9 +273,12 @@ export default component$(() => {
     <>
       <div class={{ 'mobile-btn': true, open: state.menuActive }}>
         <div
-          class={{ 'mobile-btn-burger': true }}
           onClick$={() => (state.menuActive = !state.menuActive)}
-        ></div>
+          class={{ 'mobile-btn-click': true }}
+        >
+          <div class={{ 'mobile-btn-burger': true }}></div>
+        </div>
+
         <div class={{ 'mobile-menu': true }}>
           <div class={{ 'w-1/4': true }}>
             <LogoAlt class="" />
