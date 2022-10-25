@@ -1,4 +1,6 @@
-export const LogoAlt = (props) => (
+export const LogoAlt = (props: {
+  class: string | { [className: string]: boolean } | undefined
+}) => (
   <>
     <svg
       // width="9.3351517mm"

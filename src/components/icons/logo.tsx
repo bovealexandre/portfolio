@@ -1,4 +1,11 @@
-export const Logo = (props) => (
+export const Logo = (props: {
+  class:
+    | string
+    | {
+        [className: string]: boolean // width="9.3351517mm"
+      }
+    | undefined
+}) => (
   <>
     <svg
       // width="9.3351517mm"

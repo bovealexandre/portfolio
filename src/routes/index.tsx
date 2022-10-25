@@ -144,7 +144,7 @@ export default component$(() => {
           techno: 'Blazor',
           description: `Blazor est un framework Web .NET pour créer des applications Web clientes avec C#.
 
-        Blazor vous permet de créer des interfaces utilisateur Web interactives en utilisant C # au lieu de JavaScript. Les applications Blazor sont composées de composants d\'interface utilisateur Web réutilisables implémentés à l\'aide de C#, HTML et CSS. Le code client et serveur est écrit en C #, ce qui vous permet de partager du code et des bibliothèques.`,
+        Blazor vous permet de créer des interfaces utilisateur Web interactives en utilisant C # au lieu de JavaScript. Les applications Blazor sont composées de composants d'interface utilisateur Web réutilisables implémentés à l'aide de C#, HTML et CSS. Le code client et serveur est écrit en C #, ce qui vous permet de partager du code et des bibliothèques.`,
           link: 'https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor',
         },
       ],
@@ -249,8 +249,6 @@ export default component$(() => {
     },
   })
 
-  const dateOptions = { year: 'numeric', month: 'long' }
-
   return (
     <>
       <div class={{ 'mobile-btn': true, open: state.menuActive }}>
@@ -260,7 +258,7 @@ export default component$(() => {
         ></div>
         <div class={{ 'mobile-menu': true }}>
           <div class={{ 'w-1/4': true }}>
-            <LogoAlt />
+            <LogoAlt class="" />
           </div>
           <div
             onClick$={() => {
@@ -372,9 +370,15 @@ export default component$(() => {
                   <div class={{ 'exp-info': true }}>
                     <h2>{exp.entreprise}</h2>
                     <div class={{ 'text-sm': true, capitalize: true }}>
-                      {exp.time.start.toLocaleDateString('fr-FR', dateOptions) +
+                      {exp.time.start.toLocaleDateString('fr-FR', {
+                        year: 'numeric',
+                        month: 'long',
+                      }) +
                         ' - ' +
-                        exp.time.end.toLocaleDateString('fr-FR', dateOptions)}
+                        exp.time.end.toLocaleDateString('fr-FR', {
+                          year: 'numeric',
+                          month: 'long',
+                        })}
                     </div>
                     <div>
                       {exp.job ? (
@@ -427,44 +431,50 @@ export default component$(() => {
                     {skillCat}
                   </div>
                   <div class={{ 'skills-grid': true }}>
-                    {state.skills[skillCat].map((skill) => (
-                      <div
-                        class={{
-                          'h-auto': state.currentSkill !== skill.techno,
-                          'h-28': state.currentSkill === skill.techno,
-                          'transition-all': true,
-                          'duration-500': true,
-                          'ease-in-out': true,
-                        }}
-                      >
-                        <div
-                          class={{ 'skills-skill': true }}
-                          onClick$={() =>
-                            (state.currentSkill =
-                              state.currentSkill !== skill.techno
-                                ? skill.techno
-                                : 'none')
-                          }
-                        >
-                          <img
-                            src={'skills/' + skill.techno + '.webp'}
-                            alt={skill.techno}
-                          />
-                        </div>
+                    // eslint-disable-next-line
+                    @typescript-eslint/no-explicit-any
+                    {state.skills[skillCat].map(
+                      (skill: { techno: string; link: string | undefined }) => (
                         <div
                           class={{
-                            'skills-desc': true,
-                            hidden: state.currentSkill !== skill.techno,
+                            'h-auto': state.currentSkill !== skill.techno,
+                            'h-28': state.currentSkill === skill.techno,
+                            'transition-all': true,
+                            'duration-500': true,
+                            'ease-in-out': true,
                           }}
                         >
-                          <a href={skill.link} target="_blank">
-                            <h3 class={{ 'skills-link': true }}>
-                              {skill.techno === 'C-Sharp' ? 'C#' : skill.techno}
-                            </h3>
-                          </a>
+                          <div
+                            class={{ 'skills-skill': true }}
+                            onClick$={() =>
+                              (state.currentSkill =
+                                state.currentSkill !== skill.techno
+                                  ? skill.techno
+                                  : 'none')
+                            }
+                          >
+                            <img
+                              src={'skills/' + skill.techno + '.webp'}
+                              alt={skill.techno}
+                            />
+                          </div>
+                          <div
+                            class={{
+                              'skills-desc': true,
+                              hidden: state.currentSkill !== skill.techno,
+                            }}
+                          >
+                            <a href={skill.link} target="_blank">
+                              <h3 class={{ 'skills-link': true }}>
+                                {skill.techno === 'C-Sharp'
+                                  ? 'C#'
+                                  : skill.techno}
+                              </h3>
+                            </a>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      )
+                    )}
                   </div>
                 </>
               )
