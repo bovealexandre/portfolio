@@ -6,7 +6,27 @@ import { LogoAlt } from '../components/icons/logo-alt'
 
 export default component$(() => {
   useStylesScoped$(styles)
-  const state = useStore({
+  const state: {
+    currentPage: string
+    expAppearing: boolean
+    skillsAppearing: boolean
+    menuActive: boolean
+    currentSkill: string
+    experience: {
+      poste: string
+      time: {
+        start: Date
+        end: Date
+      }
+      entreprise: string
+      description: string
+      img: string
+      job: boolean
+    }[]
+    skills: {
+      [key: string]: any
+    }
+  } = useStore({
     currentPage: 'home',
     expAppearing: false,
     skillsAppearing: false,
@@ -431,8 +451,6 @@ export default component$(() => {
                     {skillCat}
                   </div>
                   <div class={{ 'skills-grid': true }}>
-                    // eslint-disable-next-line
-                    @typescript-eslint/no-explicit-any
                     {state.skills[skillCat].map(
                       (skill: { techno: string; link: string | undefined }) => (
                         <div
