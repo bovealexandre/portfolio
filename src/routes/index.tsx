@@ -344,7 +344,7 @@ export default component$(() => {
         >
           <Logo class={{ 'home-info-logo': true }}></Logo>
           <span class={{ 'home-info-name': true }}>Alexandre Bove</span>
-          <span class={{ 'home-info-post': true }}>Front End Développeur</span>
+          <span class={{ 'home-info-post': true }}>Full Stack Développeur</span>
           <span class={{ 'home-info-location': true }}>Liège, Belgique</span>
           <div class={{ 'home-info-social': true }}>
             <a href="https://www.linkedin.com/in/alexandre-bove/">
