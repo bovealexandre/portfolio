@@ -508,5 +508,5 @@ export default component$(() => {
 })
 
 export const head: DocumentHead = {
-  title: 'Alexandre Bove - Junior full stack Developer',
+  title: 'Alexandre Bove - Full stack Developer',
 }
