@@ -6,6 +6,7 @@ export const onRequest: RequestHandler = ({ request, response, params }) => {
   let lang = params.lang?.replace(/^\/|\/$/g, '')
 
   // Set locale in response
+  // @ts-ignore
   response.locale = lang || config.defaultLocale.lang
 
   // E.g. Redirect if the language is different from the default language
