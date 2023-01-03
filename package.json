@@ -20,7 +20,8 @@
     "sass": "node-sass -w scss/ -o css/ --recursive",
     "serve": "netlify dev",
     "start": "vite --open --mode ssr",
-    "qwik": "qwik"
+    "qwik": "qwik",
+    "qwik-speak-extract": "qwik-speak-extract --supportedLangs=nl-NL,sp-SP,en-EN,it-IT,fr-FR"
   },
   "devDependencies": {
     "@builder.io/qwik": "0.9.0",
@@ -37,6 +38,7 @@
     "node-fetch": "3.2.10",
     "postcss": "^8.4.16",
     "prettier": "2.7.1",
+    "qwik-speak": "^0.5.0",
     "sass": "^1.55.0",
     "tailwindcss": "^3.1.8",
     "typescript": "4.8.3",

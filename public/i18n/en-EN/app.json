@@ -1,0 +1,10 @@
+{
+  "app": {
+    "title": "Full Stack Developer",
+    "location": "Liege, Belgium",
+    "skills": "skills",
+    "experiences": "experiences",
+    "tools": "Tools",
+    "database": "Database"
+  }
+}

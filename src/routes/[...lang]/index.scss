@@ -38,12 +38,22 @@
     @apply border-b-0;
   }
   &-img {
-    @apply w-full aspect-square object-contain sm:w-1/2 sm:m-auto;
+    @apply w-[75rem] aspect-square object-contain sm:w-1/2 sm:m-auto;
+    &-container {
+      @apply flex items-center mr-4;
+    }
   }
   &-info {
     @apply pl-2 text-[#4EA1D3] font-medium min-w-[75%] flex flex-col justify-center;
     &-description {
       @apply font-extralight text-[#D8E9EF];
+    }
+    &-technos {
+      @apply flex flex-wrap;
+    }
+    &-techno {
+      @apply p-2 m-2 text-sm text-[#D8E9EF] rounded;
+      box-shadow: 2.5px 2.5px 10px #000000, -2.5px -2.5px 10px #2d2d36;
     }
   }
 }

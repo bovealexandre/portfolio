@@ -114,3 +114,10 @@ body {
     }
   }
 }
+
+.change-locale {
+  @apply flex my-2;
+}
+.btn_lang {
+  @apply w-10 object-contain mx-2;
+}

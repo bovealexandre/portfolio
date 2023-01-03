@@ -1,0 +1,10 @@
+{
+  "app": {
+    "experiences": "expériences",
+    "location": "Liège, Belgique",
+    "skills": "compétences",
+    "title": "Full Stack Développeur",
+    "tools": "Outils",
+    "database": "Bases de données"
+  }
+}
