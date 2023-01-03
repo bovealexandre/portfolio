@@ -1,26 +1,14 @@
-import {
-  component$,
-  mutable,
-  useStore,
-  useStylesScoped$,
-} from '@builder.io/qwik'
-import { DocumentHead, useLocation } from '@builder.io/qwik-city'
+import { component$, useStore, useStylesScoped$ } from '@builder.io/qwik'
+import { DocumentHead } from '@builder.io/qwik-city'
 import styles from './index.scss'
 import { Logo } from '../../components/icons/logo'
 import { LogoAlt } from '../../components/icons/logo-alt'
 
-import {
-  $translate as t,
-  $plural as p,
-  formatDate as fd,
-  Speak,
-  useSpeakLocale,
-} from 'qwik-speak'
+import { $translate as t, Speak, useSpeakLocale } from 'qwik-speak'
 import { ChangeLocale } from '~/components/change-local'
 
 export default component$(() => {
   const loc = useSpeakLocale()
-  console.log(loc)
   useStylesScoped$(styles)
   const state: {
     currentPage: string
@@ -529,7 +517,10 @@ export default component$(() => {
                       ''
                     )}
                     <p class={{ 'exp-info-description': true }}>
-                      {exp.description[loc.lang]}
+                      {
+                        // @ts-ignore
+                        exp.description[loc.lang]
+                      }
                     </p>
                   </div>
                 </div>
