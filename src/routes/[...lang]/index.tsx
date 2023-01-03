@@ -518,7 +518,7 @@ export default component$(() => {
                     )}
                     <p class={{ 'exp-info-description': true }}>
                       {
-                        // @ts-ignore
+                        // @ts-ignore:next-line
                         exp.description[loc.lang]
                       }
                     </p>
