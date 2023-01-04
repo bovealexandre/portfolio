@@ -6,18 +6,18 @@ import { qwikSpeakInline } from 'qwik-speak/inline';
 import netlifyEdge from '@netlify/vite-plugin-netlify-edge'
 
 export default defineConfig(() => {
-  return {
-    plugins: [
-      qwikCity(),
-      qwikVite({
-        ssr: { outDir: 'netlify/edge-functions/entry.netlify-edge' },
-      }),
-      tsconfigPaths(),
-      qwikSpeakInline({
-        supportedLangs: ['en-EN', 'it-IT', 'fr-FR', 'nl-NL', 'sp-SP'],
-        defaultLang: 'fr-FR'
-      }),
-      netlifyEdge({ functionName: 'entry.netlify-edge' }),
-    ],
-  }
+    return {
+        plugins: [
+            qwikCity({ trailingSlash: false }),
+            qwikVite({
+                ssr: { outDir: 'netlify/edge-functions/entry.netlify-edge' },
+            }),
+            tsconfigPaths(),
+            //   qwikSpeakInline({
+            //     supportedLangs: ['en-EN', 'it-IT', 'fr-FR', 'nl-NL', 'sp-SP'],
+            //     defaultLang: 'fr-FR'
+            //   }),
+            netlifyEdge({ functionName: 'entry.netlify-edge' }),
+        ],
+    }
 })
