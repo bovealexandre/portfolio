@@ -20,9 +20,7 @@ export default function (opts: RenderToStreamOptions) {
     manifest,
     ...opts,
     containerAttributes: {
-      lang:
-        opts.envData?.locale?.replace(/^\/|\/$/g, '') ||
-        config.defaultLocale.lang,
+      lang: config.defaultLocale.lang,
       ...opts.containerAttributes,
     },
   })
