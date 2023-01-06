@@ -14,7 +14,7 @@ export const RouterHead = component$(() => {
 
       <link rel="canonical" href={loc.href} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="icon" type="image/ico" href="/logo.ico" />
+      <link rel="icon" type="image/webp" href="/logo.webp" />
 
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
