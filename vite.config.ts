@@ -9,15 +9,12 @@ export default defineConfig(() => {
   return {
     plugins: [
       qwikCity({ trailingSlash: false }),
-      qwikVite({
-        ssr: { outDir: 'netlify/edge-functions/entry.netlify-edge' },
-      }),
+      qwikVite(),
       tsconfigPaths(),
-      qwikSpeakInline({
-        supportedLangs: ['en-EN', 'it-IT', 'fr-FR', 'nl-NL', 'sp-SP'],
-        defaultLang: 'fr-FR'
-      }),
-      netlifyEdge({ functionName: 'entry.netlify-edge' }),
+      // qwikSpeakInline({
+      //   supportedLangs: ['en-EN', 'it-IT', 'fr-FR', 'nl-NL', 'sp-SP'],
+      //   defaultLang: 'fr-FR'
+      // }),
     ],
   }
 })
