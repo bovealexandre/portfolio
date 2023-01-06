@@ -1,4 +1,4 @@
-import { component$, $, useOnWindow, useStyles$ } from '@builder.io/qwik'
+import { component$, useStyles$, useClientEffect$ } from '@builder.io/qwik'
 import {
   QwikCity,
   RouterOutlet,
@@ -19,6 +19,12 @@ export default component$(() => {
    *
    * Dont remove the `<head>` and `<body>` elements.
    */
+
+  useClientEffect$(() => {
+    window.onpopstate = (event) => {
+      if (event) window.location.reload() // reload the page on back or forward
+    }
+  })
 
   return (
     <QwikSpeak config={config} translationFn={translationFn}>
