@@ -1,6 +1,6 @@
 import { component$, useStyles$, useClientEffect$ } from '@builder.io/qwik'
 import {
-  QwikCity,
+  QwikCityProvider,
   RouterOutlet,
   ServiceWorkerRegister,
 } from '@builder.io/qwik-city'
@@ -28,7 +28,7 @@ export default component$(() => {
 
   return (
     <QwikSpeak config={config} translationFn={translationFn}>
-      <QwikCity>
+      <QwikCityProvider>
         <head>
           <meta charSet="utf-8" />
           <RouterHead />
@@ -37,7 +37,7 @@ export default component$(() => {
           <RouterOutlet />
           <ServiceWorkerRegister />
         </body>
-      </QwikCity>
+      </QwikCityProvider>
     </QwikSpeak>
   )
 })
