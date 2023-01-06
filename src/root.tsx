@@ -4,12 +4,12 @@ import {
   RouterOutlet,
   ServiceWorkerRegister,
 } from '@builder.io/qwik-city'
-import { RouterHead } from './components/router-head/router-head'
+import { RouterHead } from '~/components/router-head/router-head'
 
-import styles from './global.scss?inline'
+import styles from '~/global.scss?inline'
 
 import { QwikSpeak } from 'qwik-speak'
-import { config, translationFn } from './speak-config'
+import { config, translationFn } from '~/speak-config'
 
 export default component$(() => {
   useStyles$(styles)

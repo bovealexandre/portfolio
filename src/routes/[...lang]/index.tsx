@@ -1,8 +1,8 @@
 import { component$, useStore, useStylesScoped$ } from '@builder.io/qwik'
 import { DocumentHead } from '@builder.io/qwik-city'
-import styles from './index.scss'
-import { Logo } from '../../components/icons/logo'
-import { LogoAlt } from '../../components/icons/logo-alt'
+import styles from './index.scss?inline'
+import { Logo } from '~/components/icons/logo'
+import { LogoAlt } from '~/components/icons/logo-alt'
 
 import { $translate as t, Speak, useSpeakLocale } from 'qwik-speak'
 import { ChangeLocale } from '~/components/change-local'
