@@ -9,7 +9,7 @@
     "build": "qwik build",
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
-    "build.server": "vite build --ssr src/entry.netlify-edge.tsx",
+    "build.server": "vite build -c adaptors/netlify-edge/vite.config.ts",
     "build.types": "tsc --incremental --noEmit",
     "deploy": "netlify deploy",
     "deploy:prod": "netlify deploy --prod",
@@ -19,11 +19,11 @@
     "fmt.check": "prettier --check .",
     "lint": "eslint \"src/**/*.ts*\"",
     "preview": "qwik build preview && vite preview --open",
+    "qwik-speak-extract": "qwik-speak-extract --supportedLangs=nl-NL,sp-SP,en-EN,it-IT,fr-FR",
     "sass": "node-sass -w scss/ -o css/ --recursive",
     "serve": "netlify dev",
     "start": "vite --open --mode ssr",
-    "qwik": "qwik",
-    "qwik-speak-extract": "qwik-speak-extract --supportedLangs=nl-NL,sp-SP,en-EN,it-IT,fr-FR"
+    "qwik": "qwik"
   },
   "devDependencies": {
     "@builder.io/qwik": "0.16.2",
