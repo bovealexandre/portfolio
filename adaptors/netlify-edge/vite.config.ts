@@ -9,7 +9,7 @@ export default extendConfig(baseConfig, () => {
       rollupOptions: {
         input: ['src/entry.netlify-edge.tsx', '@qwik-city-plan'],
       },
-      outDir: '.netlify/edge-functions/entry.netlify-edge',
+      outDir: 'netlify/edge-functions/entry.netlify-edge',
     },
     plugins: [
       netifyEdgeAdaptor({
